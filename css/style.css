@@ -50,9 +50,8 @@ header { text-align: center; margin-bottom: 30px; }
 .logo { 
     max-width: 160px; 
     margin-bottom: 15px; 
-    /* Efek glow ganda: shadow pertama untuk garis tepi putih tajam, shadow kedua untuk pendaran luas */
-    filter: drop-shadow(0px 0px 3px rgb(5, 5, 5)); 
-    
+    /* Trik mengubah gambar PNG menjadi full putih murni */
+    filter: brightness(0) invert(1); 
 }
 
 .subtitle { 
