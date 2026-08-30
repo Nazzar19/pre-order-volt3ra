@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt3ra Coffee | Premium Pre-Order</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- PANEL KIRI: LOGO & MENU -->
+        <div class="left-panel">
+            <header>
+                <img src="assets/Logo-VC.png" alt="Volt3ra Coffee Logo" class="logo">
+                <p class="subtitle">Pre-Order maks 25 cup s/d Jam 21.00.<br>Diantar langsung saat istirahat kampus.</p>
+            </header>
+            
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Supresso</span>
+                        <span class="deskripsi-menu">Simple shot, serious kick.</span>
+                        <span class="harga">Rp 5.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-supresso', 'Supresso', -1)">-</button>
+                        <span class="qty-angka" id="qty-supresso">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-supresso', 'Supresso', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Kopi Jahe</span>
+                        <span class="deskripsi-menu">Warm spice, bold coffee.</span>
+                        <span class="harga">Rp 7.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-jahe', 'Kopi Jahe', -1)">-</button>
+                        <span class="qty-angka" id="qty-jahe">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-jahe', 'Kopi Jahe', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Americano</span>
+                        <span class="deskripsi-menu">Clean, bold, no drama.</span>
+                        <span class="harga">Rp 8.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-americano', 'Americano', -1)">-</button>
+                        <span class="qty-angka" id="qty-americano">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-americano', 'Americano', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Deadline Drip</span>
+                        <span class="deskripsi-menu">Built for late nights.</span>
+                        <span class="harga">Rp 11.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-drip', 'Deadline Drip', -1)">-</button>
+                        <span class="qty-angka" id="qty-drip">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-drip', 'Deadline Drip', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item signature">
+                    <div class="menu-info">
+                        <span class="nama-menu">Veloura Roast ⭐</span>
+                        <span class="deskripsi-menu">Smooth, rich, refined.</span>
+                        <span class="harga">Rp 12.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-veloura', 'Veloura Roast', -1)">-</button>
+                        <span class="qty-angka" id="qty-veloura">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-veloura', 'Veloura Roast', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Better Hug</span>
+                        <span class="deskripsi-menu">Creamy comfort in a cup.</span>
+                        <span class="harga">Rp 12.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-hug', 'Better Hug', -1)">-</button>
+                        <span class="qty-angka" id="qty-hug">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-hug', 'Better Hug', 1)">+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <span class="nama-menu">Just Friend</span>
+                        <span class="deskripsi-menu">Sweet enough to stay complicated.</span>
+                        <span class="harga">Rp 12.000</span>
+                    </div>
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="ubahQty('qty-friend', 'Just Friend', -1)">-</button>
+                        <span class="qty-angka" id="qty-friend">0</span>
+                        <button class="btn-qty" onclick="ubahQty('qty-friend', 'Just Friend', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL KANAN: FORM -->
+        <div class="right-panel">
+            <h2 class="form-title">Form Pre-Order</h2>
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Diantar ke (Gedung/Ruang)</label>
+                <input type="text" id="lokasi" placeholder="Contoh: Gedung A, Lantai 2" required>
+            </div>
+            <div class="input-group">
+                <label>Nomor WA Aktif</label>
+                <input type="tel" id="nowa" placeholder="Contoh: 08123456789" required>
+            </div>
+            <div class="input-group">
+                <label>Catatan Tambahan (Opsional)</label>
+                <input type="text" id="catatan" placeholder="Contoh: kopinya sedikit, less sugar">
+            </div>
+            <div class="input-group">
+                <label>Metode Pembayaran</label>
+                <select id="pembayaran">
+                    <option value="QRIS">QRIS (Transfer)</option>
+                    <option value="Cash">Cash (Bayar di tempat)</option>
+                </select>
+            </div>
+            <button class="btn-order" onclick="kirimWA()">Kirim Pre-Order via WA</button>
+            
+            <div class="feedback-section">
+                <p class="feedback-teks">Bantu Volt3ra Coffee jadi lebih baik dengan ulasanmu! ☕</p>
+                <div class="feedback-buttons">
+                    <a href="https://maps.app.goo.gl/y5MbmQwfq88ufc696" target="_blank" class="btn-feedback">⭐ Beri Ulasan di Google Maps</a>
+                </div>
+            </div>
+                    
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+:root {
+    --cokelat-gelap: #c87f43;
+    --krem-latar: #F9F6F0;
+    --emas-aksen: #D4AF37;
+    --putih: #FFFFFF;
+}
+
+body {
+    /* Font modern dan bersih untuk body */
+    font-family: 'Outfit', sans-serif;
+    background-color: #EAE6DF;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background: var(--putih);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* --- PANEL KIRI (MENU COKELAT) --- */
+.left-panel {
+    background: linear-gradient(135deg, var(--cokelat-gelap) 0%, #5b3618 100%);
+    color: var(--putih);
+    padding: 40px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header { text-align: center; margin-bottom: 30px; }
+
+.logo { 
+    max-width: 160px; 
+    margin-bottom: 15px; 
+    /* Efek glow ganda: shadow pertama untuk garis tepi putih tajam, shadow kedua untuk pendaran luas */
+    filter: drop-shadow(0px 0px 3px rgb(5, 5, 5)); 
+    
+}
+
+.subtitle { 
+    font-size: 0.95rem; 
+    color: #D3C9C1; 
+    line-height: 1.5; 
+    margin: 0; 
+    font-weight: 300;
+}
+
+.menu-list { display: flex; flex-direction: column; gap: 12px; }
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.3s, background 0.3s;
+    border-left: 4px solid transparent;
+}
+.menu-item:hover {
+    transform: translateX(10px);
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid var(--emas-aksen);
+}
+.signature { color: var(--emas-aksen); }
+
+.menu-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Mengatur jarak antar teks biar rapat tapi rapi */
+}
+
+/* Font mewah untuk nama menu kopi */
+.nama-menu {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--putih);
+}
+
+/* Styling untuk teks deskripsi bahasa Inggris */
+.deskripsi-menu {
+    font-size: 0.75rem;
+    color: #A89F95; /* Warna abu-abu kecokelatan samar */
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
+.harga {
+    font-size: 0.95rem;
+    color: var(--emas-aksen); /* Harganya sekarang gua bikin warna emas biar kontras */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.signature .nama-menu { color: var(--emas-aksen); }
+
+/* --- PANEL KANAN (FORM) --- */
+.right-panel {
+    padding: 40px 30px;
+    flex: 1;
+    background: var(--putih);
+}
+
+.form-title {
+    /* Font mewah untuk judul form */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cokelat-gelap);
+    margin: 0 0 25px 0;
+}
+
+.input-group { margin-bottom: 18px; }
+.input-group label {
+    display: block; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    margin-bottom: 8px; 
+    color: var(--cokelat-gelap);
+}
+.input-group input, .input-group select {
+    width: 100%; padding: 12px 15px; border: 1px solid #DDD; border-radius: 8px;
+    font-family: 'Outfit', sans-serif; background: #FAFAFA; transition: 0.3s; box-sizing: border-box;
+    font-size: 0.95rem;
+}
+.input-group input:focus, .input-group select:focus {
+    border-color: var(--emas-aksen); outline: none; background: var(--putih); 
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+}
+
+.btn-order {
+    width: 100%; background: var(--emas-aksen); color: var(--putih); font-weight: 600;
+    font-size: 1.1rem; padding: 16px; border: none; border-radius: 8px; cursor: pointer;
+    transition: 0.3s; box-shadow: 0 4px 10px rgba(212,175,55,0.3);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+}
+.btn-order:hover {
+    background: #C49F2C; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(212,175,55,0.4);
+}
+
+/* --- TOMBOL QTY --- */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-qty {
+    background-color: var(--emas-aksen);
+    color: var(--putih);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-qty:hover {
+    background-color: #C49F2C;
+    transform: scale(1.1);
+}
+
+.qty-angka {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 20px;
+    text-align: center;
+}
+
+/* --- TAMPILAN DEKSTOP / LAPTOP (Layar Lebar) --- */
+@media (min-width: 768px) {
+    .container { 
+        flex-direction: row; 
+    }
+}
+/* --- ANIMASI SCROLL SAAT DIGESER KE BAWAH --- */
+.hidden-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Biar saat di-hover efek animasinya nggak bentrok dengan efek geser */
+.menu-item.show-animate {
+    transition: transform 0.3s, background 0.3s, border 0.3s, opacity 0.6s ease-out;
+}
+/* --- FEEDBACK & MAPS SECTION --- */
+.feedback-section {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px dashed #DDD;
+    text-align: center;
+}
+
+.feedback-teks {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 15px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-feedback, .btn-maps {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.btn-feedback {
+    background-color: var(--putih);
+    color: var(--cokelat-gelap);
+    border: 1px solid var(--cokelat-gelap);
+}
+
+.btn-feedback:hover {
+    background-color: var(--cokelat-gelap);
+    color: var(--putih);
+}
+
+.btn-maps {
+    background-color: #FAFAFA;
+    color: var(--cokelat-gelap);
+    border: 1px solid #DDD;
+}
+
+.btn-maps:hover {
+    background-color: #EAE6DF;
+    border-color: var(--emas-aksen);
+}
