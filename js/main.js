@@ -1,6 +1,5 @@
 // 1. Daftar Harga dan Memori Keranjang
 const hargaMenu = {
-    'Supresso': 5000,
     'Kopi Jahe': 7000,
     'Americano': 8000,
     'Deadline Drip': 11000,
@@ -10,7 +9,6 @@ const hargaMenu = {
 };
 
 let keranjang = {
-    'Supresso': 0,
     'Kopi Jahe': 0,
     'Americano': 0,
     'Deadline Drip': 0,
@@ -34,8 +32,17 @@ function ubahQty(idElement, namaMenu, perubahan) {
 
 // 3. Fungsi saat tombol "Kirim Pre-Order" diklik
 function kirimWA() {
-    // --- FITUR KUNCI JAM BUKA & TUTUP (15.00 - 21.00) ---
     const waktuSekarang = new Date();
+    
+    // --- FITUR KUNCI HARI (TUTUP JUMAT & SABTU) ---
+    const hari = waktuSekarang.getDay(); // 0 = Minggu, 5 = Jumat, 6 = Sabtu
+
+    if (hari === 5 || hari === 6) {
+        alert("Maaf bro, Pre-Order tutup dulu ya buat hari Jumat dan Sabtu. Kita buka lagi hari Minggu! ☕");
+        return; 
+    }
+
+    // --- FITUR KUNCI JAM BUKA & TUTUP (15.00 - 21.00) ---
     const jam = waktuSekarang.getHours();
 
     if (jam >= 21 || jam < 15) {
