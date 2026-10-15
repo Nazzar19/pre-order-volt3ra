@@ -5,7 +5,9 @@ const hargaMenu = {
     'Deadline Drip': 11000,
     'Veloura Roast': 12000,
     'Better Hug': 12000,
-    'Just Friend': 12000
+    'Just Friend': 12000,
+    'Pure Matcha': 13000,
+    'Matcha Latte': 13000
 };
 
 let keranjang = {
@@ -14,7 +16,9 @@ let keranjang = {
     'Deadline Drip': 0,
     'Veloura Roast': 0,
     'Better Hug': 0,
-    'Just Friend': 0
+    'Just Friend': 0,
+    'Pure Matcha': 0,
+    'Matcha Latte': 0
 };
 
 // 2. Fungsi saat tombol + atau - diklik
